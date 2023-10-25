@@ -1,0 +1,11 @@
+#define a dictionary called DNA_ReserveComplement that maps each DNA symbol ('A', 'T', 'G', 'C') to its complement. This is necessary to perform the complement replacement.
+DNA_ReserveComplement= {'A': 'T', 'T':'A', 'G': 'C','C':'G'}
+#define a function named reserve_complement that takes one argument, seq, which represents the DNA sequence to be processed.
+def reserve_complement(seq):
+#The core of the reverse complement process is a list comprehension, which iterates over each symbol in the DNA sequence seq, looks up its complement in the DNA_ReserveComplement dictionary, and creates a list of the complemented symbols.
+    return ''.join([DNA_ReserveComplement[nuc] for nuc in seq])[::-1]
+#This list comprehension produces a list of the complemented symbols in the same order as they appear in the original DNA sequence.
+#The list of complemented symbols is then joined into a single string using the join method,this creates a single string of complemented symbols.
+#After obtaining the complemented string, it is reversed using string slicing with [::-1]. This effectively reverses the order of the symbols.
+print(reserve_complement('AAGGCTCCAGAGCCATATCGGAATGGTCTCTCTCAGAGGATATATTGTGTTTGCGGAGACAGCGATTGATAAGCCCAGGCTGAGGCCCGGTAGGCCACCAGTTTCGCACTCCCTAGGGGCTCCACCTACATTTTAGCGCAACGAATGGGCCCCGTTCCGGAAGTCGGCGGCCTATGACTCGTTTGTCTGGGTGTCCTAACCTAGCGCTCTATGTACTCTAACTGCACTCGATGGACGTATCTTAGATCTAGCTATTGTCTCATGCTCAAAACCATCCCACAGTCAAGGATTCAAATAAGGGGATTATCTCTGGTGAGTTGCTTAACTGACACAGACTATTCCGTGCCACGCGCAGTCATCTCAAACTTTAAGGTCCCAAACAGAGAATGGCCCAAATATTAGTCCAGCGGAGACACTGAGTTACAGCAACGTAGGATGTTGACGTATAATATTAAACGATAAATCGTGACGGCTTCTCTGTCGAGCTTCGACTCTACCGGTCAGGCTAACAAGTCTAACGAGATCTGTGTGCTGCGCGGTCAACCAATCACCGAACTAGTCGATGCCCATAACTAGATGCTTAATCTGTATTCAAGCTCTTAGTGATAGAAGTAAGAATCGGTGACTGGTACAAGTGTGTTAAACCTACGGTTCGCATCTGTCTAACTGCATTATCTGTGCGAGATGCGGGGTCTATGGGTTCGCGTACAAGAGGAGTGGGGCGCTGGGCAAGAGACTTTAGAAGAACCGTGGTCCTCTTCTATTCCCCGGGAAGCTACCTCCGCGAGACTTGGTATCTCTATTAGCCTCAGC'))
+#The function returns the reverse complement string, which represents the reverse complement of the input DNA sequence.
